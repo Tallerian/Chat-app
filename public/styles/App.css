@@ -1,0 +1,11 @@
+.chatbox{
+  width: 743px;
+  height: 368px;
+  background: #282535;
+  border-radius: 38px; 
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
