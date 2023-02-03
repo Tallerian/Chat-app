@@ -1,3 +1,8 @@
+# FIGMA LINK LAYOUT
+https://www.figma.com/file/evcCQATna0R29QE2nAoi2g/Chat-APP-REACT-JS-%2B-FIREBASE?node-id=0%3A1&t=o3F0yaqmbo9zuFhm-1
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
