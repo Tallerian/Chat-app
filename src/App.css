@@ -119,6 +119,19 @@
   box-shadow: 5px 5px 14px 5px rgba(0,0,0,0.41);
 }
 
+.chat_text input[type="text"]{
+  padding-left: 10px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  /* identical to box height */
+  opacity: 1;
+  color: #DBD7D7;
+}
+
 .chat_text input[type="text"]::placeholder{
   padding-left: 10px;
 
