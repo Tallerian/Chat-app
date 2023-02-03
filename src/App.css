@@ -35,7 +35,9 @@
   color: #EDEDED;
   display: grid;
   place-items: center;
-  padding-top: 10px;
+
+  height: 5%;
+
   
 }
 
@@ -84,4 +86,48 @@
   font-weight: 600;
   font-size: 13px;
   line-height: 13px;
+}
+
+.container_sms{
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.chat_display{
+  width: 98%;
+  height: 85%;
+
+}
+
+.chat_text{
+  height: 15%;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat_text input{
+  width: 70%;
+  background: #303030;
+  height: 60%;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 5px 5px 14px 5px rgba(0,0,0,0.41);
+}
+
+.chat_text input[type="text"]::placeholder{
+  padding-left: 10px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  /* identical to box height */
+  opacity: 0.6;
+  color: #DBD7D7;
 }
