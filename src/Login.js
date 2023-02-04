@@ -1,8 +1,6 @@
-
-import './App.css';
-
-import Login from './Login';
-import ChatRoom from './Chatroom';
+import React, {Component} from 'react';
+import { useSignInWithGithub } from 'react-firebase-hooks/auth';
+import './styles/Login.css';
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
@@ -22,24 +20,26 @@ firebase.initializeApp({
   measurementId: "G-98SP1X9SNZ"
 })
 
-
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
+function Login () {
 
-function App() {
+    const SignInWithGoogle = () => {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider)
+    }
 
-  const [user] = useAuthState(auth);
-  
-  return (
-    <body>
+    return(
 
-      <section>
-        {user ? <ChatRoom /> : <Login />}
-      </section>
-      
-    </body>
-  );
+        <div class = "container_sign_in">
+            <div class= "container_button">
+                <button onClick={SignInWithGoogle}>Sign-in With Google</button>
+            </div>
+        </div>
+       
+            
+    )
 }
 
-export default App;
+export default Login;
