@@ -35,7 +35,7 @@ function App() {
     <body>
 
       <section>
-        {user ? <ChatRoom /> : <Login />}
+        <ChatRoom/>
       </section>
       
     </body>
