@@ -62,7 +62,7 @@
     height: 80px;
   }
   
-  #user_img{
+  .user_img{
     background-image: url(/public/img/hero.jpg);
     background-size: cover;
     object-fit: cover;

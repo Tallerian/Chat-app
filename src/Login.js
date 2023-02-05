@@ -20,14 +20,17 @@ firebase.initializeApp({
   measurementId: "G-98SP1X9SNZ"
 })
 
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+function Login (props) {
 
-function Login () {
+    const auth = firebase.auth();
 
     const SignInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
-        auth.signInWithPopup(provider)
+        props.signInWithPopup(provider)
+    }
+
+    const SignOut = () =>{
+        props.SignOut();
     }
 
     return(
@@ -35,6 +38,9 @@ function Login () {
         <div class = "container_sign_in">
             <div class= "container_button">
                 <button onClick={SignInWithGoogle}>Sign-in With Google</button>
+            </div>
+            <div class= "container_button">
+                <button onClick={SignOut}>Sign-Out</button>
             </div>
         </div>
        

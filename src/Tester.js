@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import './styles/Chatroom.css';
 import Msg from './Msg';
 
@@ -32,15 +32,43 @@ function ChatRoom (props) {
 
     const username = "Ian Ruvuto";
 
-    
-
     return(
-      <body>
-        <p>HELLO WORLD</p>
 
+        <body>
+
+
+      <div class = "chatbox">
+
+        <div class = "user_chat_container">
         
-        <img src={props.a} alt="" />
-      </body>
+          <div class = "container_chat">
+          
+            <div class = "title_txt">Hello Welcome to my chat box</div>
+            <div class = "container_sms">
+              <div class="chat_display">
+              {messages && messages.map(msg => <Msg key={msg.id} message={msg} />)}
+              </div>
+
+              <div class = "chat_text">
+                <input type="text" placeholder='Type something...' />
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div class = "container_user">
+            <div class = "user">
+              <img src = {props.photoURL} alt="" />
+              <div class = "user_img"></div>
+              <div class = "user_name">{username}</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </body>
             
     )
 }

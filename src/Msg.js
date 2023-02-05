@@ -3,7 +3,7 @@ import './styles/Msg.css';
 
 function Msg (props){
 
-    const { text, uid } = props.message
+    const { text, uid, photoURL } = props.message
 
     return(
         <div class="msg_container">
