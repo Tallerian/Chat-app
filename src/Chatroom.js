@@ -36,10 +36,36 @@ function ChatRoom (props) {
 
     return(
       <body>
-        <p>HELLO WORLD</p>
+        <div class = "chatbox">
 
-        
-        <img src={props.a} alt="" />
+        <div class = "user_chat_container">
+
+          <div class = "container_chat">
+          
+            <div class = "title_txt">Hello Welcome to my chat box</div>
+            <div class = "container_sms">
+              <div class="chat_display">
+              {messages && messages.map(msg => <Msg key={msg.id} message={msg} />)}
+              </div>
+
+              <div class = "chat_text">
+                <input type="text" placeholder='Type something...' />
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div class = "container_user">
+            <div class = "user">
+              <img class = "user_im_src" src = {props.a} alt="" />
+              <div class = "user_name">{username}</div>
+            </div>
+          </div>
+
+        </div>
+
+        </div>
       </body>
             
     )

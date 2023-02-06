@@ -8,7 +8,9 @@ function Msg (props){
     return(
         <div class="msg_container">
 
-            <div class ="msg_avatar"></div>
+            <div class ="msg_avatar">
+                <img src={photoURL} alt="" />
+            </div>
 
             <div class = "msg_text_container"><p>{text}</p></div>
 

@@ -28,8 +28,6 @@ const firestore = firebase.firestore();
 
 function App() {
 
-  const [reload, setReload] = useState("r");
-
   const [user] = useAuthState(auth);
   if(auth.currentUser){
     console.log("saving photo");
@@ -44,7 +42,10 @@ function App() {
     <body>
       <section>
         <p>Hello</p>
-      {user ? <ChatRoom const a = {urlPhoto}/>: <Login/>}
+        <img src={urlPhoto} alt="" />
+        <ChatRoom a={urlPhoto}/>
+        
+      
        
       </section>
       

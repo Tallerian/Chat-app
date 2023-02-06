@@ -75,6 +75,12 @@
     margin-top: 10px;
   
   }
+  .user_im_src{
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
   
   .user_name{
   
@@ -149,3 +155,18 @@
     opacity: 0.6;
    color: #DBD7D7; 
   }
+
+  .container_sign_in{
+    margin: auto;
+    width: 528px;
+    height: 460px;
+
+    background: #282535;
+    border-radius: 95px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
