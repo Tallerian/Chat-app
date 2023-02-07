@@ -1,6 +1,5 @@
 import React from "react";
 import './App.css';
-import Tester from './Tester.js';
 
 import ChatRoom from './Chatroom';
 
@@ -9,8 +8,6 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { useState} from 'react';
 
 firebase.initializeApp({
   apiKey: "AIzaSyDV9IeR2erNXuNJ8tmgfdAhnwMkx7OwVwQ",
@@ -41,11 +38,7 @@ function App() {
   return (
     <body>
       <section>
-        <p>Hello</p>
-        <img src={urlPhoto} alt="" />
-        <ChatRoom a={urlPhoto}/>
-        
-      
+      {user ? <ChatRoom a={urlPhoto} auther = {auth}/> : <Login />}
        
       </section>
       

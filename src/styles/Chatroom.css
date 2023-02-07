@@ -51,10 +51,11 @@
     border-radius: 38px;
   
     display: flex;
-    justify-content: center;
+    flex-direction: column;
   }
   
   .user{
+    margin-bottom: 100%;
     display: flex;
     justify-content: center;
   
@@ -93,6 +94,20 @@
     font-size: 13px;
     line-height: 13px;
   }
+
+  .user_signout{
+    height: 100%;
+    margin-top: 100%;
+    padding-bottom: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user_signout button{
+    background-color: wheat;
+  }
   
   .container_sms{
     height: 95%;
@@ -102,9 +117,28 @@
   }
   
   .chat_display{
+    padding-left: 10px;
     width: 98%;
     height: 85%;
-  
+    margin-top: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-right: 15px;
+  }
+
+  .chat_display::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .chat_display::-webkit-scrollbar-thumb {
+    background: #282535; 
+    border-radius: 10px;
+  }
+
+  .chat_display::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px rgb(84, 84, 84); 
+    border-radius: 10px;
+    background: #45405b;
   }
   
   .chat_text{
