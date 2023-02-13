@@ -8,6 +8,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from "firebase/auth";
 
 firebase.initializeApp({
   apiKey: "AIzaSyDV9IeR2erNXuNJ8tmgfdAhnwMkx7OwVwQ",
@@ -20,25 +21,37 @@ firebase.initializeApp({
 })
 
 
+{/* ------------ Setting auth for use signing ------------------- */}
 const auth = firebase.auth();
-const firestore = firebase.firestore();
 
 function App() {
 
+  {/* ------------ Checking if prev signed ing------------------- */}
+  if (localStorage.getItem("user_signed_ian") == null){
+    <Login/>
+  }
+
+  {/* ------------ Grabbing User's info------------------- */}
   const [user] = useAuthState(auth);
   if(auth.currentUser){
     console.log("saving photo");
-    const { photoURL } = auth.currentUser;
+    const {photoURL} = auth.currentUser;
+    const name = auth.currentUser.displayName;
+
+    console.log(name);
+    localStorage.setItem('name_user_ian', name);
+
     console.log(photoURL);
-    localStorage.setItem('photo', photoURL);
+    localStorage.setItem('photo_user_ian', photoURL);
   }
 
-  const urlPhoto = localStorage.getItem('photo')
-  
+  const urlPhoto = localStorage.getItem('photo_user_ian');
+  const displayname = localStorage.getItem('name_user_ian');
+
   return (
     <body>
       <section>
-      {user ? <ChatRoom a={urlPhoto} auther = {auth}/> : <Login />}
+      {user ? <ChatRoom a={urlPhoto} auther = {auth} displayName = {displayname}/> : <Login />}
        
       </section>
       
@@ -51,6 +64,8 @@ function Login () {
   const SignInWithGoogle = () => {
       const provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithPopup(provider)
+      localStorage.setItem("user_signed_ian", 'T');
+
   }
 
   const SignOut = () =>{
@@ -62,9 +77,6 @@ function Login () {
       <div class = "container_sign_in">
           <div class= "container_button">
               <button onClick={SignInWithGoogle}>Sign-in With Google</button>
-          </div>
-          <div class= "container_button">
-              <button onClick={SignOut}>Sign-Out</button>
           </div>
       </div>
      

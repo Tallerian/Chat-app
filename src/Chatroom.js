@@ -34,17 +34,19 @@ function ChatRoom (props) {
   const [messages] = useCollectionData(query, { idField: 'id' });
   
 
-  const username = "Ian Ruvuto";
+  const username = props.displayName;
 
   const [msgValue, setMsgValue] = useState('');
 
   let photo = "none";
 
+  {/* sending the msg and deleting input box */}
   const clearandSend = async(event) => {
-
     if(event.key === "Enter"){
       event.preventDefault();
+
       const { uid, photoURL } = props.auther.currentUser;
+
       {/* Creating new firestor document */}
       await messagesRef.add({
         text: msgValue,
@@ -52,6 +54,8 @@ function ChatRoom (props) {
         uid,
         photoURL
       })
+
+      {/* clearing input field after sent */}
       setMsgValue("");
     }
   }
@@ -67,6 +71,7 @@ function ChatRoom (props) {
           
             <div class = "title_txt">Hello Welcome to my chat box</div>
             <div class = "container_sms">
+            
               <div class="chat_display">
               {messages && messages.map(msg => <Msg 
               key={msg.id} 
